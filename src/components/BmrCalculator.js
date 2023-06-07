@@ -136,7 +136,7 @@ const BmrCalculator = () => {
                     onClick={handleClick}
                     style={{ top: '20px' }}
                   >
-                    Register
+                    Calculate
                   </Button>
               </form>   
         </div>
