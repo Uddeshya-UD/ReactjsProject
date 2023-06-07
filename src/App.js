@@ -4,12 +4,14 @@ import Home from './routes/Home';
 import Register from './routes/Register';
 import Bmr from './routes/Bmr';
 import Login from './routes/Login';
+import Contact from './routes/Contact';
 
 function App() {
   return (
     <Router>
     <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/Contact" element={<Contact />} />
     <Route path="/Bmr" element={<Bmr />} />
     <Route path="/Register" element={<Register />} />
     <Route path="/Login" element={<Login />} />

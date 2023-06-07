@@ -10,8 +10,7 @@ const RegisterForm = () => {
   const [mobile, setMobile] = useState();
   const [age, setAge] = useState();
   const [gender, setGender] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -21,18 +20,17 @@ const RegisterForm = () => {
       mobile,
       age,
       gender,
-      username,
-      password
+      email
     };
     console.log(customer);
-    fetch('http://localhost:8080/customer/save', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(customer),
-      mode: 'no-cors'
-    });
+    // fetch('http://localhost:8080/customer/save', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(customer),
+    //   mode: 'no-cors'
+    // });
   };
 
   return (
@@ -89,22 +87,12 @@ const RegisterForm = () => {
 
         <FormControl fullWidth>
           <TextField
-            id="username"
-            label="Username"
-            placeholder="Enter Username"
+            id="email"
+            label="Email"
+            placeholder="Enter Email"
             variant="outlined"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)} />
-        </FormControl>
-
-        <FormControl fullWidth>
-          <TextField
-            id="password"
-            label="Password"
-            placeholder="Enter Password"
-            variant="outlined"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} />
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} />
         </FormControl>
 
         <Button
