@@ -62,7 +62,7 @@ const Contact = () => {
                 className='btn-light'    
                   variant="contained"
                     style={{ top: '20px' }} disabled={state.submitting}>
-                    Register
+                    Send
                   </Button>
     </form>
     </div>
