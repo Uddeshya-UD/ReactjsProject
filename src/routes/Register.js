@@ -7,7 +7,7 @@ const Register = () => {
     <div>
       <Navbar/>
       <RegisterForm/>
-      {/* <Footer/> */}
+      <Footer/>
           </div>
   )
 }

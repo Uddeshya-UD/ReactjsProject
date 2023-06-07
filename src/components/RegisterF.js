@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import './RegisterFormStyle.css'
 import Footer from './Footer';
@@ -118,9 +117,7 @@ const RegisterForm = () => {
           Register
         </Button>
       </form>
-    </div><div>
-        <Footer />
-      </div></>
+    </div></>
   
   );
 };
