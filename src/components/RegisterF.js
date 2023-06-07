@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import './RegisterFormStyle.css'
 
@@ -11,6 +12,11 @@ const RegisterForm = () => {
   const [age, setAge] = useState();
   const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
+
+  const handleGenderChange = (event, newGender) => {
+    setGender(newGender);
+  };
+
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -35,7 +41,7 @@ const RegisterForm = () => {
 
   return (
     <><div className="register">
-      <form className="form" component="form" noValidate autoComplete="off">
+      <form className="Rform" component="form" noValidate autoComplete="off">
         <h1 className="form-heading">Registration</h1>
 
         <FormControl fullWidth>
@@ -75,15 +81,17 @@ const RegisterForm = () => {
             onChange={(e) => setAge(parseInt(e.target.value))} />
         </FormControl>
 
-        <FormControl fullWidth>
-          <TextField
-            id="gender"
-            label="Gender"
-            placeholder="Enter Gender"
-            variant="outlined"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)} />
-        </FormControl>
+        <ToggleButtonGroup
+          value={gender}
+          exclusive
+          onChange={handleGenderChange}
+          aria-label="gender"
+          fullWidth
+        >
+          <ToggleButton value="M">Male</ToggleButton>
+          <ToggleButton value="F">Female</ToggleButton>
+        </ToggleButtonGroup>
+
 
         <FormControl fullWidth>
           <TextField
@@ -96,13 +104,13 @@ const RegisterForm = () => {
         </FormControl>
 
         <Button
-          id="register-btn"
-          variant="contained"
-          onClick={handleClick}
-          style={{ marginTop: '20px' }}
-        >
-          Register
-        </Button>
+                className='btn-light'    
+                  variant="contained"
+                    onClick={handleClick}
+                    style={{ top: '20px' }}
+                  >
+                    Register
+                  </Button>
       </form>
     </div></>
   

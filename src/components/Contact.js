@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './ContactStyles.css'
+import Button from '@mui/material/Button';
+
 
 const Contact = () => {
 
@@ -12,8 +14,8 @@ const Contact = () => {
 
 
   return (
-    <div className='main'>
-      <form className="form" onSubmit={handleSubmit}>
+    <div className='mainclass'>
+      <form className="Cform" component="form" onSubmit={handleSubmit}>
       <h1 className="form-heading">Contact Us !</h1>
 
          <label htmlFor="name">
@@ -54,9 +56,14 @@ const Contact = () => {
         field="message"
         errors={state.errors}
       />
-      <button className="btn-light" type="submit" disabled={state.submitting}>
-        Submit
-      </button>
+    
+
+              <Button
+                className='btn-light'    
+                  variant="contained"
+                    style={{ top: '20px' }} disabled={state.submitting}>
+                    Register
+                  </Button>
     </form>
     </div>
   );

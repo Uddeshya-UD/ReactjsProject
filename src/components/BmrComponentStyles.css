@@ -11,15 +11,14 @@
   background: linear-gradient(to right, rgb(218, 218, 218), rgb(76, 75, 75));
   }
 
-.form {
+.Bform {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 70%;
     height: auto; /* Removed fixed height */
     background: linear-gradient(to left, rgb(43, 41, 41), rgb(204, 201, 201));
-    padding: 20px; /* Added padding for better spacing */
     box-sizing: border-box; /* Include padding and border within the width */
   }
   
@@ -34,7 +33,7 @@
     width: 100%;
     box-sizing: border-box; /* Include padding and border within the width */
     max-width: 100%; /* Set maximum width to 100% of the container */
-    padding: 10px; /* Added padding for better spacing */
+    padding: 30px; /* Added padding for better spacing */
     margin-bottom: 10px; /* Adjusted margin for better spacing */
   }
 
@@ -45,6 +44,48 @@
 
 #bmr{
     text-decoration: dashed;
-    color: rgb(107, 29, 29);
+    color: rgb(78, 31, 31);
 }
 
+.input-adornment {
+  color: black; /* Sets the color of the input adornment to black */
+}
+
+.input-placeholder::placeholder {
+  color: black; /* Sets the color of the placeholder text to black */
+}
+
+@media screen and (max-width:640px) {
+
+  .main .Bform .form-heading h1{
+      font-size: 3rem;
+
+  }
+
+
+  
+  .Bform {
+    width: 100vw;;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(to right, rgb(218, 218, 218), rgb(76, 75, 75));
+    padding: 0;
+    border: 1px;
+    border-style: initial;
+  
+  }
+
+  .bmr{
+    text-align: center;
+  }
+
+  .input-adornment {
+    font-size: 0.8rem; /* Sets the color of the input adornment to black */
+  }
+
+  .Register .Bform p {
+      font-size: 1.4rem;
+  
+  }
+  
+}
