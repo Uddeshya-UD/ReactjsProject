@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import './RegisterFormStyle.css'
-import Footer from './Footer';
 
 const RegisterForm = () => {
   const [firstname, setFName] = useState('');
