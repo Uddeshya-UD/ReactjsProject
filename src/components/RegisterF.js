@@ -8,10 +8,12 @@ import './RegisterFormStyle.css'
 const RegisterForm = () => {
   const [firstname, setFName] = useState('');
   const [secondname, setSName] = useState('');
-  const [mobile, setMobile] = useState();
-  const [age, setAge] = useState();
+  const [mobile, setMobile] = useState('');
+  const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
 
   const handleGenderChange = (event, newGender) => {
     setGender(newGender);
@@ -26,19 +28,31 @@ const RegisterForm = () => {
       mobile,
       age,
       gender,
-      email
+      email,
+      password
     };
     console.log(customer);
-    // fetch('http://localhost:8080/customer/save', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(customer),
-    //   mode: 'no-cors'
-    // });
-  };
+    const getDevices = async () => {
+      const settings = {
+          method: 'POST',
+          headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(customer)
+      };
+      try {
+          const fetchResponse = await fetch(`http://localhost:3000/signup`, settings);
+          const data = await fetchResponse.json();
+          return data;
+      } catch (e) {
+          return e;
+      }    
+  
+  }
 
+  getDevices();
+  }
   return (
     <><div className="register">
       <form className="Rform" component="form" noValidate autoComplete="off">
@@ -68,7 +82,7 @@ const RegisterForm = () => {
             placeholder="Enter Mobile"
             variant="outlined"
             value={mobile}
-            onChange={(e) => setMobile(parseInt(e.target.value))} />
+            onChange={(e) => setMobile(e.target.value)} />
         </FormControl>
 
         <FormControl fullWidth>
@@ -78,7 +92,7 @@ const RegisterForm = () => {
             placeholder="Enter Age"
             variant="outlined"
             value={age}
-            onChange={(e) => setAge(parseInt(e.target.value))} />
+            onChange={(e) => setAge(e.target.value)} />
         </FormControl>
 
         <ToggleButtonGroup
@@ -102,6 +116,17 @@ const RegisterForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)} />
         </FormControl>
+
+        <FormControl fullWidth>
+          <TextField
+            id="password"
+            label="password"
+            placeholder="Enter Password"
+            variant="outlined"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} />
+        </FormControl>
+
 
         <Button
                 className='btn-light'    
