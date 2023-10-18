@@ -42,7 +42,9 @@ const RegisterForm = () => {
           body: JSON.stringify(customer)
       };
       try {
-          const fetchResponse = await fetch(`http://localhost:3000/signup`, settings);
+          // const fetchResponse = await fetch(`http://localhost:3000/signup`, settings);
+                    const fetchResponse = await fetch(`http://52.66.244.135:3000/signup `, settings);
+
           const data = await fetchResponse.json();
           return data;
       } catch (e) {
@@ -50,7 +52,6 @@ const RegisterForm = () => {
       }    
   
   }
-
   getDevices();
   }
   return (
