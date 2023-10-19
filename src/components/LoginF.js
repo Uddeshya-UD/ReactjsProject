@@ -92,6 +92,7 @@ let navigate = useNavigate();
           <TextField
             id="password"
             className="password"
+            type="password"
             label="password"
             placeholder="Enter Password"
             variant="outlined"
