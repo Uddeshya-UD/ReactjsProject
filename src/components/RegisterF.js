@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
-import './RegisterFormStyle.css'
+import '../css/RegisterFormStyle.css'
 
 const RegisterForm = () => {
   const [firstname, setFName] = useState('');

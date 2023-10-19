@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { ToggleButtonGroup, ToggleButton } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 
-import "./BmrComponentStyles.css";
+import "../css/BmrComponentStyles.css";
 
 const BmrCalculator = () => {
   const [name, setName] = useState("");

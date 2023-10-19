@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import { useNavigate } from 'react-router-dom';
-import './LoginFormStyles.css'
+import '../css/LoginFormStyles.css'
 
 
 function LoginForm() {

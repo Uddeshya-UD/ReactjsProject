@@ -19,6 +19,7 @@ function App() {
     <Route path="/News" element={<News />} />
 
 
+
  </Routes>
 </Router>
   );

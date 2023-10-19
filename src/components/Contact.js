@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from '@formspree/react';
-import './ContactStyles.css'
+import '../css/ContactStyles.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
