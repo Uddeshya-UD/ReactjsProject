@@ -8,7 +8,7 @@ const Bmr = () => {
     <div>
       <Navbar/>
       <BmrCalculator/>
-      <Footer/>
+      {/* <Footer/> */}
       </div>
   )
 }
