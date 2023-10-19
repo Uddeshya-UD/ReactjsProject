@@ -12,8 +12,8 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Contact</h3>
             <ul>
-              <li>Address: 123 Street, City, Country</li>
-              <li>Email: info@example.com</li>
+              <li>Address: Awas vikas , Kanpur</li>
+              <li>Email: AceGym@example.com</li>
               <li>Phone: +1 234 567 890</li>
             </ul>
           </div>
@@ -21,8 +21,8 @@ const Footer = () => {
             <h3>Links</h3>
             <ul>
               <li><a className='footer-a' href="/">Home</a></li>
-              <li><a className='footer-a' href="/about">Facebook</a></li>
-              <li><a className='footer-a' href="/services">Instagram</a></li>
+              <li><a className='footer-a' target="_blank " href="https://www.facebook.com/profile.php?id=100011671078350">Facebook</a></li>
+              <li><a className='footer-a' target="_blank " href="https://www.instagram.com/uddeshya.music">Instagram</a></li>
             </ul>
           </div>
         

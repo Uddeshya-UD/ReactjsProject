@@ -1,9 +1,15 @@
-import React from 'react'
-
-const Login = () => {
+import React from 'react';
+import Navbar from '../components/Navbar' ;
+import Footer from '../components/Footer';
+import LoginForm from '../components/LoginF';
+const Register = () => {
   return (
-    <div>Login</div>
+    <div>
+      {/* <Navbar/> */}
+      <LoginForm/>
+      {/* <Footer/> */}
+          </div>
   )
 }
 
-export default Login
+export default Register
