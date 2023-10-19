@@ -6,7 +6,6 @@ const Register = () => {
     <div>
       <Navbar/>
       <RegisterForm/>
-      {/* <Footer/> */}
           </div>
   )
 }
