@@ -5,6 +5,7 @@ import Register from './routes/Register';
 import Bmr from './routes/Bmr';
 import Login from './routes/Login';
 import Contact from './routes/Contact';
+import News from './routes/News';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
     <Route path="/Bmr" element={<Bmr />} />
     <Route path="/Register" element={<Register />} />
     <Route path="/Login" element={<Login />} />
+    <Route path="/News" element={<News />} />
+
 
  </Routes>
 </Router>

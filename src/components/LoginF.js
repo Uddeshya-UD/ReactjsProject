@@ -3,8 +3,14 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import './LoginFormStyles.css'
+import {useNavigate } from 'react-router-dom';
+
+
 
 const LoginForm = () => {
+
+let navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,7 +35,9 @@ const LoginForm = () => {
       password
     };
     console.log(customer);
-    const getDevices = async () => {
+    
+    const GetDevices = async () => {
+
       const settings = {
           method: 'POST',
           headers: {
@@ -39,8 +47,8 @@ const LoginForm = () => {
           body: JSON.stringify(customer)
       };
       try {
-        //   const fetchResponse = await fetch(`http://localhost:3000/login`, settings);
-                    const fetchResponse = await fetch(`http://52.66.244.135:3000/login `, settings);
+          const fetchResponse = await fetch(`http://localhost:3000/login`, settings);
+                    // const fetchResponse = await fetch(`http://52.66.244.135:3000/login `, settings);
 
           const data = await fetchResponse.json();
           console.log(data)
@@ -51,16 +59,17 @@ const LoginForm = () => {
     
           }
     
-        //   if(data.user){
-        //     location.assign('/')
-        //   }
+          if(data.user){
+          
+                navigate('/News'); // Use navigate to redirect
+          }
 
       } catch (e) {
           return e;
       }    
   
   }
-  getDevices();
+  GetDevices();
   }
   return (
     <><div className="login">
