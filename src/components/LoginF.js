@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import './LoginFormStyles.css'
 
@@ -40,8 +39,8 @@ const LoginForm = () => {
           body: JSON.stringify(customer)
       };
       try {
-          const fetchResponse = await fetch(`http://localhost:3000/login`, settings);
-                    // const fetchResponse = await fetch(`http://52.66.244.135:3000/login `, settings);
+        //   const fetchResponse = await fetch(`http://localhost:3000/login`, settings);
+                    const fetchResponse = await fetch(`http://52.66.244.135:3000/login `, settings);
 
           const data = await fetchResponse.json();
           console.log(data)
