@@ -2,78 +2,53 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
+import { useNavigate } from 'react-router-dom';
 import './LoginFormStyles.css'
-import {useNavigate } from 'react-router-dom';
 
 
-
-const LoginForm = () => {
-
-let navigate = useNavigate();
-
+function LoginForm() {
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
-  const form = document.querySelector('.Lform');
-  const emailError = document.querySelector('.emailerror')
-  const passwordError = document.querySelector('.passworderror')
-
-  const handleClick = (e) => {
+  const handleLoginClick = async (e) => {
     e.preventDefault();
 
-      //reset error messages
+    // Reset error messages
+    setEmailError('');
+    setPasswordError('');
 
-      emailError.textContent = ''
-      passwordError.textContent = ''
+    try {
+      const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      console.log(data);
 
-       // get values
-    const email = form.email.value;
-    const password = form.password.value;
+      if (data.errors) {
+        if (data.errors.email) setEmailError(data.errors.email);
+        if (data.errors.password) setPasswordError(data.errors.password);
+      }
 
-    const customer = {
-      email,
-      password
-    };
-    console.log(customer);
-    
-    const GetDevices = async () => {
+      if (data.user) {
+        navigate('/News'); // Use navigate to redirect
+      }
 
-      const settings = {
-          method: 'POST',
-          headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(customer)
-      };
-      try {
-          const fetchResponse = await fetch(`http://localhost:3000/login`, settings);
-                    // const fetchResponse = await fetch(`http://52.66.244.135:3000/login `, settings);
+      // Handle the JSON response data here
+      console.log('Response data:', data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-          const data = await fetchResponse.json();
-          console.log(data)
-
-          if(data.errors){
-            emailError.textContent = data.errors.email
-            passwordError.textContent = data.errors.password
-    
-          }
-    
-          if(data.user){
-          
-                navigate('/News'); // Use navigate to redirect
-          }
-
-      } catch (e) {
-          return e;
-      }    
-  
-  }
-  GetDevices();
-  }
   return (
-    <><div className="login">
-      <form className="Lform" component="form" noValidate autoComplete="off">
+    <div className="login">
+      <form className="Lform" noValidate autoComplete="off">
         <h1 className="form-heading">Login</h1>
 
         <FormControl fullWidth>
@@ -84,8 +59,9 @@ let navigate = useNavigate();
             placeholder="Enter Email"
             variant="outlined"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} />
-        <div className="emailerror"></div>
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <div className="emailerror">{emailError}</div>
         </FormControl>
 
         <FormControl fullWidth>
@@ -93,28 +69,26 @@ let navigate = useNavigate();
             id="password"
             className="password"
             type="password"
-            label="password"
+            label="Password"
             placeholder="Enter Password"
             variant="outlined"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} />
-        <div className="passworderror"></div>
-
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="passworderror">{passwordError}</div>
         </FormControl>
 
-
         <Button
-                className='btn-light'    
-                  variant="contained"
-                    onClick={handleClick}
-                    style={{ top: '20px' }}
-                  >
-                    Login
-                  </Button>
+          className="btn-light"
+          variant="contained"
+          style={{ top: '20px' }}
+          onClick={handleLoginClick}
+        >
+          Login
+        </Button>
       </form>
-    </div></>
-  
+    </div>
   );
-};
+}
 
 export default LoginForm;
