@@ -25,14 +25,6 @@
 
          
         }
-        
-        #form-heading {
-          background-color: white;
-          color: black;
-          padding: 10px; /* Added padding for better spacing */
-          margin-bottom: 10px; /* Adjusted margin for better spacing */
-        }
-        
       
         #form-field::placeholder {
           color: black;

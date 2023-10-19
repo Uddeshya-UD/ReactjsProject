@@ -51,3 +51,11 @@ background: rgba(255,255,255,0.2);
 color: #fff;
 transition: 0.3s;
 }
+
+.form-heading {
+  padding-bottom: 20px;
+  margin: auto;
+  font-family: 'Quicksand', sans-serif;
+  color: #444;
+  text-align: center;
+}
