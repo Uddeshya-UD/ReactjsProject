@@ -24,11 +24,6 @@
   transform: translate(-50%, -50%);
   }
   
-  #form-heading {
-    text-align: center;
-      margin-bottom: 20px;
-      color: black;
-  }
   .form-control {
     margin-bottom: 20px;
     display: inline;
