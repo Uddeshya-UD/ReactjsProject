@@ -5,7 +5,7 @@ import LoginForm from '../components/LoginF';
 const Register = () => {
   return (
     <div>
-      {/* <Navbar/> */}
+      <Navbar/>
       <LoginForm/>
       {/* <Footer/> */}
           </div>

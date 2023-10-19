@@ -12,14 +12,16 @@
   }
 
 .Bform {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    height: auto; /* Removed fixed height */
-    background: linear-gradient(to left, rgb(43, 41, 41), rgb(204, 201, 201));
-    box-sizing: border-box; /* Include padding and border within the width */
+  width: 360px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   }
   
   #form-heading {

@@ -2,6 +2,10 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './ContactStyles.css'
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+
+
 
 
 const Contact = () => {
@@ -18,45 +22,35 @@ const Contact = () => {
       <form className="Cform" component="form" onSubmit={handleSubmit}>
       <h1 className="form-heading">Contact Us !</h1>
 
-         <label htmlFor="name">
-        Name
-      </label>
-      <input
-        id="name"
-        type="name" 
-        name="name"
-      />
-      <ValidationError 
-        prefix="Name" 
-        field="name"
-        errors={state.errors}
-      />
-      <label htmlFor="email">
-        Email Address
-      </label>
-      <input
-        id="email"
-        type="email" 
-        name="email"
-      />
-      <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-      <label htmlFor="message">
-        Message
-      </label>
-      <textarea
-        id="message"
-        name="message"
-      />
-      <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-    
+      <FormControl fullWidth>
+          <TextField
+            id="name"
+            className="name"
+            label="Name"
+            placeholder="Enter Name"
+            variant="outlined"
+          />
+        <div className="emailerror"></div>
+        </FormControl>
+
+      <FormControl fullWidth>
+          <TextField
+            id="email"
+            className="email"
+            label="Email"
+            placeholder="Enter Email"
+            variant="outlined"
+         />
+        <div className="emailerror"></div>
+        </FormControl>
+        <FormControl fullWidth>
+        <TextField
+          id="outlined-multiline-flexible"
+          label="Message"
+          multiline
+          maxRows={4}
+        />
+        </FormControl>
 
               <Button
                 className='btn-light'    
